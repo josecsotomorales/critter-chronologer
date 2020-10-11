@@ -1,5 +1,6 @@
 package com.jose.critter.service;
 
+import com.jose.critter.entity.Employee;
 import com.jose.critter.entity.Pet;
 import com.jose.critter.entity.Schedule;
 import com.jose.critter.repository.ScheduleRepository;
@@ -28,11 +29,11 @@ public class ScheduleService {
     }
 
     public List<Schedule> getAllPetSchedules(Long petId) {
-        return this.scheduleRepository.findAllByPets(petId);
+        return this.scheduleRepository.findAllByPetsId(petId);
     }
 
     public List<Schedule> getAllEmployeeSchedules(Long employeeId) {
-        return this.scheduleRepository.findAllByEmployees(employeeId);
+        return this.scheduleRepository.findAllByEmployeesId(employeeId);
     }
 
     public List<Schedule> getAllPetsSchedules(List<Pet> pets) {

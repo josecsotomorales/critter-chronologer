@@ -73,10 +73,8 @@ public class ScheduleController {
 
     @GetMapping("/employee/{employeeId}")
     public List<ScheduleDTO> getScheduleForEmployee(@PathVariable long employeeId) {
-        Employee employee = employeeService.getEmployee(employeeId);
-
         return this.scheduleService
-                .getAllEmployeeSchedules(employee.getId())
+                .getAllEmployeeSchedules(employeeId)
                 .stream()
                 .map(this::convertToScheduleDTO)
                 .collect(Collectors.toList());
