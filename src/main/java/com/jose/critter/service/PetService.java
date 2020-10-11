@@ -7,6 +7,7 @@ import com.jose.critter.repository.PetRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -20,8 +21,7 @@ public class PetService {
     }
 
     public Pet save(Pet pet) {
-        this.petRepository.save(pet);
-        return pet;
+        return this.petRepository.save(pet);
     }
 
     public Pet findById(Long id){
@@ -38,6 +38,9 @@ public class PetService {
 
     public void addSchedule(Schedule schedule, Long petId) {
         Pet pet = this.petRepository.findById(petId).orElseThrow(PetNotFoundException::new);
+        if (pet.getSchedules() == null) {
+            pet.setSchedules(new ArrayList<>());
+        }
         pet.getSchedules().add(schedule);
         this.save(pet);
     }
