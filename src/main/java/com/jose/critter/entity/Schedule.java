@@ -30,7 +30,47 @@ public class Schedule {
     //Constructors
     public Schedule() {}
 
+    public Schedule(LocalDate date, Set<EmployeeSkill> activities, List<Employee> employees, List<Pet> pets) {
+        this.date = date;
+        this.activities = activities;
+        this.employees = employees;
+        this.pets = pets;
+    }
 
     // Getters and Setters
+    public Long getId() {
+        return id;
+    }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public Set<EmployeeSkill> getActivities() {
+        return activities;
+    }
+
+    public void setActivities(Set<EmployeeSkill> activities) {
+        this.activities = activities;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
+
+    public List<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(List<Pet> pets) {
+        this.pets = pets;
+    }
 }
