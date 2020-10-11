@@ -25,8 +25,7 @@ public class Customer {
     private List<Pet> pets;
 
     // Constructors
-    public Customer() {
-    }
+    public Customer() {}
 
     public Customer(String name, String phoneNumber, String notes, List<Pet> pets) {
         this.name = name;

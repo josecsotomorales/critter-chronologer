@@ -30,8 +30,7 @@ public class Pet {
     private Customer customer;
 
     // Constructors
-    public Pet() {
-    }
+    public Pet() {}
 
     public Pet(String name, LocalDate birthDate, PetType type, String notes, Customer customer) {
         this.name = name;
