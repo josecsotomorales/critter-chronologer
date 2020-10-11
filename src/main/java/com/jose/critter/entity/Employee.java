@@ -3,11 +3,9 @@ package com.jose.critter.entity;
 import com.jose.critter.util.EmployeeSkill;
 import org.hibernate.annotations.Nationalized;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.DayOfWeek;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -28,6 +26,13 @@ public class Employee {
     private Set<DayOfWeek> daysAvailable;
 
     // Relationships
+    @ManyToMany
+    @JoinTable(
+            name = "employee_schedule",
+            joinColumns = { @JoinColumn(name = "employee_id")},
+            inverseJoinColumns = { @JoinColumn(name = "schedule_id")}
+    )
+    private List<Schedule> schedules;
 
     //Constructors
     public Employee() {}
