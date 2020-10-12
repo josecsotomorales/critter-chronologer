@@ -147,7 +147,7 @@ public class CritterFunctionalTest {
         emp3.setDaysAvailable(Sets.newHashSet(DayOfWeek.FRIDAY, DayOfWeek.SATURDAY, DayOfWeek.SUNDAY));
 
         emp1.setSkills(Sets.newHashSet(EmployeeSkill.FEEDING, EmployeeSkill.PETTING));
-        emp2.setSkills(Sets.newHashSet(EmployeeSkill.PETTING, EmployeeSkill.WALKING));
+        emp2.setSkills(Sets.newHashSet(EmployeeSkill.PETTING, EmployeeSkill.MEDICATING));
         emp3.setSkills(Sets.newHashSet(EmployeeSkill.WALKING, EmployeeSkill.SHAVING));
 
         EmployeeDTO emp1n = userController.saveEmployee(emp1);
